@@ -81,14 +81,14 @@ class PunishmentWrapper(gym.Wrapper):
 if __name__ == '__main__':
     env_id = "CarRacing-v3"
     n_envs = 8
-    env_kwargs = {"continuous": False, "max_episode_steps": 2000}
+    env_kwargs = {"continuous": False, "max_episode_steps": 1000}
     wrapper_kwargs = {"keep_dim": True}
 
 
     def make_env():
         env = gym.make(env_id, **env_kwargs)
-        env = SpeedRewardWrapper(env)
-        env = PunishmentWrapper(env)
+        # env = SpeedRewardWrapper(env)
+        # env = PunishmentWrapper(env)
 
         return env
 
@@ -131,7 +131,7 @@ if __name__ == '__main__':
                                  n_eval_episodes=5,
                                  deterministic=True,
                                  render=False,
-                                 #callback_after_eval=StopTrainingOnNoModelImprovement(10)
+                                 callback_after_eval=StopTrainingOnNoModelImprovement(40)
                                  )
 
 

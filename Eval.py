@@ -24,7 +24,7 @@ eval_env = make_vec_env(
 
 eval_env = VecFrameStack(eval_env, n_stack=5)
 eval_env = VecTransposeImage(eval_env)
-model = PPO.load("logs/best_model_883.06_v.zip", device="cuda")
+model = PPO.load("logs/best_model_908.60_s.zip", device="cuda")
 
 try:
     for episode in range(NUM_EPISODES):

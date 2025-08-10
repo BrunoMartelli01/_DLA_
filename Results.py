@@ -1,6 +1,6 @@
 import numpy
 import matplotlib.pyplot
-data = numpy.load(".\logs\evaluations_908.60_s.npz")
+data = numpy.load(".\logs\evaluations.npz")
 
 
 timesteps = data['timesteps']
